@@ -4,7 +4,7 @@
 #
 # Usage:
 #
-# python count_lines.py --path /www/sites/ --endswith gif,png,jpg,swf,ttf,pdf
+# python count_lines.py --path /www/sites/ --endWith gif,png,jpg,swf,ttf,pdf
 #
 # Version:	0.1
 # Author:	Andy Lyon
@@ -17,8 +17,8 @@ import sys
 #
 # Check which file extensions to ignore...
 #
-def shouldIgnore(file, endswith):
-	for ew in endswith:
+def shouldIgnore(file, endWith):
+	for ew in endWith:
 #		if file[len(extension)*-1:] == extension:
 		if file.endswith(ew):
 			return False
@@ -41,16 +41,16 @@ if __name__ == "__main__" :
 		path = sys.argv[sys.argv.index('--path') + 1]
 	
 	# Are there any file extensions we should ignore?
-	endswith = []
-	if "--endswith" in sys.argv:
-		endswith = sys.argv[sys.argv.index('--endswith') + 1].split(",")
+	endWith = []
+	if "--endWith" in sys.argv:
+		endWith = sys.argv[sys.argv.index('--endWith') + 1].split(",")
 	
 	print "Using path: ", path
 	
 	for root, dirs, files in os.walk(path):
 		for file in files:
 			# Ignore .SVN files...
-			if ".svn" not in root and ".svn" not in file and not shouldIgnore(file, endswith):
+			if ".svn" not in root and ".svn" not in file and not shouldIgnore(file, endWith):
 				pathToFile = os.path.join(root, file)
 				foo = open(pathToFile, "r").readlines()
 				lines += len(foo)
