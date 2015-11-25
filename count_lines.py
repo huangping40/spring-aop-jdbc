@@ -26,7 +26,7 @@ def shouldIgnore(file, endswith):
 	return True
 
 #
-# Entry point
+# Entry point uu 
 #
 if __name__ == "__main__" :
 	
