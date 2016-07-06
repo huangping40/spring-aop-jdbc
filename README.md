@@ -1,10 +1,8 @@
-# Count Lines
-
-Go through a directory (and sub-directories) and count the number of lines in each file.
+#  spring aop jdbc  transaction test 
 
 
 ## Usage
 
 Example:
 
-python count_lines.py --path /www/sites/ --endswith go,c,java
+run in eclipse ide.

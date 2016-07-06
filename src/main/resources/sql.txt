@@ -1,0 +1,10 @@
+
+
+CREATE TABLE IF NOT EXISTS `puser` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `first_name` varchar(256) ,
+  `last_name` varchar(256) ,
+  `gender` varchar(256) ,
+  city varchar(256) ,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB;
